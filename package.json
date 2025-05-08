@@ -8,13 +8,13 @@
     "dev": "nodemon src/server.ts",
     "test": "node test.js",
     "start": "node dist/server.js",
-    "prepare": "husky"
+    "prepare": "cd .. && husky ./client/.husky"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^8.3.6",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "@types/node": "^22.15.17",
     "lint-staged": "^15.5.2",
     "nodemon": "^3.1.10",
@@ -22,6 +22,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "commitizen": "^4.3.1",
     "husky": "^9.1.7"
   }
 }
