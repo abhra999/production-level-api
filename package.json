@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npx tsc",
+    "dev": "nodemon src/index.ts",
     "test": "node test.js",
-    "start": "node index.js",
+    "start": "node dist/index.js",
     "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^22.15.17",
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.2"
+    "lint-staged": "^15.5.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
