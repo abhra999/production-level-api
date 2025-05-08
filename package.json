@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
+    "commitmsg": "commitlint -x @commitlint/config-conventional -E GIT_PARAMS",
     "build": "npx tsc",
     "dev": "nodemon src/server.ts",
     "test": "node test.js",
@@ -13,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
+    "@commitlint/cli": "^8.3.6",
     "@commitlint/config-conventional": "^19.8.1",
     "@types/node": "^22.15.17",
     "husky": "^9.1.7",
