@@ -29,6 +29,7 @@
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.17",
     "@types/source-map-support": "^0.5.10",
+    "colorette": "^2.0.20",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.5",
     "husky": "^9.1.7",
