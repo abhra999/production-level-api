@@ -2,7 +2,7 @@ import winston from 'winston';
 import { green, yellow, red, cyan, magenta, bold } from 'colorette';
 import path from 'path';
 import config from '../config/config';
-
+import 'winston-mongodb';
 const { combine, timestamp, printf } = winston.format;
 
 // Colorette-enhanced console formatter
@@ -74,9 +74,26 @@ const logger = winston.createLogger({
                           timestamp({ format: 'HH:mm:ss' }),
                           consoleFormat
                       )
+                  }),
+                  // MongoDB transport
+                  new winston.transports.MongoDB({
+                      level: 'info',
+                      db: config.DATABASE_URL as string,
+                      metaKey: 'meta',
+                      expireAfterSeconds: 3600 * 24 * 30,
+                      collection: 'application-log'
                   })
               ]
-            : []
+            : [
+                  // MongoDB transport
+                  new winston.transports.MongoDB({
+                      level: 'info',
+                      db: config.DATABASE_URL as string,
+                      metaKey: 'meta',
+                      expireAfterSeconds: 3600 * 24 * 30,
+                      collection: 'application-log'
+                  })
+              ]
 });
 
 export default logger;
