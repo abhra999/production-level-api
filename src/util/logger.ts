@@ -53,7 +53,7 @@ const logger = winston.createLogger({
                   new winston.transports.File({
                       filename: path.join(
                           __dirname,
-                          '../',
+                          '../../',
                           'logs',
                           'combined-log.log'
                       ),
@@ -62,7 +62,7 @@ const logger = winston.createLogger({
                   new winston.transports.File({
                       filename: path.join(
                           __dirname,
-                          '../',
+                          '../../',
                           'logs',
                           'error-log.log'
                       ),
