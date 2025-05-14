@@ -6,11 +6,13 @@ import responeMessage from './constants/responeMessage';
 import httpError from './util/httpError';
 //source-map-support
 import * as sourceMapSupport from 'source-map-support';
+import helmet from 'helmet';
 sourceMapSupport.install();
 
 const app: Application = express();
 
 //middleware
+app.use(helmet());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../', 'public')));
 
