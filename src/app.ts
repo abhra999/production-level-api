@@ -7,12 +7,20 @@ import httpError from './util/httpError';
 //source-map-support
 import * as sourceMapSupport from 'source-map-support';
 import helmet from 'helmet';
+import cors from 'cors';
+import config from './config/config';
 sourceMapSupport.install();
 
 const app: Application = express();
 
 //middleware
 app.use(helmet());
+app.use(
+    cors({
+        origin: [config.SERVER_URL as string],
+        credentials: true
+    })
+);
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../', 'public')));
 

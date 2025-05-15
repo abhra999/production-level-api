@@ -2,6 +2,8 @@ import config from './config/config';
 import app from './app';
 import logger from './util/logger';
 import databaseService from './service/databaseService';
+import { initRateLimiter } from './config/rate-limiter';
+
 const server = app.listen(config.PORT);
 
 (async () => {
@@ -9,9 +11,11 @@ const server = app.listen(config.PORT);
         const conn = await databaseService.connect();
         logger.info('MONGO DATABASE_CONNECTED', {
             meta: {
-                CONNECTION_NAME: conn.connection.name
+                CONNECTION_NAME: conn.name
             }
         });
+
+        initRateLimiter(conn);
         logger.info('APPLICATION_STARTED', {
             meta: {
                 PORT: config.PORT,

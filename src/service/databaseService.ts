@@ -3,11 +3,12 @@ import config from '../config/config';
 
 export default {
     connect: async () => {
-        const conn = await mongoose
-            .connect(config.DATABASE_URL as string)
-            .catch((err) => {
-                throw err;
-            });
-        return conn;
+        // eslint-disable-next-line no-useless-catch
+        try {
+            await mongoose.connect(config.DATABASE_URL as string);
+            return mongoose.connection;
+        } catch (err) {
+            throw err;
+        }
     }
 };

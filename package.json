@@ -26,7 +26,9 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.26.0",
+    "@types/cors": "^2.8.18",
     "@types/express": "^5.0.1",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^22.15.17",
     "@types/source-map-support": "^0.5.10",
     "colorette": "^2.0.20",
@@ -40,13 +42,17 @@
     "typescript-eslint": "^8.32.0"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv-flow": "^4.1.0",
     "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
     "helmet": "^8.1.0",
     "mongoose": "^8.14.3",
     "path": "^0.12.7",
+    "rate-limiter-flexible": "^7.1.0",
     "source-map-support": "^0.5.21",
-    "winston": "^3.17.0"
+    "winston": "^3.17.0",
+    "winston-mongodb": "^6.0.0"
   }
 }
